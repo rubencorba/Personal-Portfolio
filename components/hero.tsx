@@ -2,16 +2,19 @@
 
 import { ChevronDown } from "lucide-react"
 import PaPerfil3 from "../public/PaPerfil3.jpg"
+import { useLanguage } from "@/context/LanguageContext"
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     element?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-linear-to-b from-primary/5 via-transparent to-transparent" />
+    <section id="inicio" className="min-h-screen bg-linear-to-b from-transparent to-primary/5 flex items-center justify-center px-6 py-10 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 " />
 
       <div className="max-w-4xl mx-auto text-center">
         {/* Profile Image Placeholder */}
@@ -19,7 +22,7 @@ export default function Hero() {
           <div className="w-80 h-80 rounded-full bg-linear-to-br from-primary to-accent p-1">
             <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
               <img
-                src={ PaPerfil3.src }
+                src={PaPerfil3.src}
                 alt="Rubén Ernesto Corbalán"
                 className="w-full h-full rounded-full object-cover object-top"
               />
@@ -34,19 +37,16 @@ export default function Hero() {
         <p className="text-2xl md:text-3xl font-light text-primary mb-6">Full Stack Developer</p>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-          Desarrollador web Full Stack con experiencia profesional en el desarrollo de aplicaciones web modernas
-        </p>
-        {/* <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-          Creo soluciones web modernas y accesibles, combinando diseño creativo con ingeniería robusta. Apasionado por
-          code quality, UX y tech innovation.
-        </p> */}
+{/*           Desarrollador web Full Stack con experiencia profesional en el desarrollo de aplicaciones web modernas, capaz de comunicarme y trabajar en español, inglés y portugués.
+ */}{t("hero", "description")}
+         </p>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
           <button
             onClick={() => scrollToSection("contacto")}
             className="cursor-pointer px-8 py-3 bg-linear-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all"
           >
-            Contáctame
+            {t("hero", "contact")}
           </button>
           <a
             href="https://drive.google.com/drive/folders/1jSoIeOiQAtMBo5poc5-sars7SDMsIAzQ"
@@ -54,7 +54,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-colors"
           >
-            Ver CV
+            {t("hero", "cv")}
           </a>
         </div>
 

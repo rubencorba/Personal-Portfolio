@@ -7,7 +7,7 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-linear-to-br from-background via-background to-background">
+    <main className="min-h-screen bg-linear-to-br ">
       <Header />
       <Hero />
       <Projects />

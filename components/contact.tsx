@@ -1,11 +1,12 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Mail, Loader } from "lucide-react"
+import { useLanguage } from "@/context/LanguageContext"
 
 export default function Contact() {
+  const { t } = useLanguage()
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,11 +31,7 @@ export default function Contact() {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        body: JSON.stringify(formData),
       })
 
       setSuccess(true)
@@ -51,22 +48,14 @@ export default function Contact() {
     <section id="contacto" className="py-24 px-6 bg-linear-to-b from-primary/5 to-transparent">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
-          Contacto
+          {t("contact", "title")}
         </h2>
-        <p className="text-muted-foreground mb-12 text-lg">
-          ¿Tienes un proyecto en mente? Me encantaría saber de ti. Completa el formulario y te responderé pronto.
-        </p>
+        <p className="text-muted-foreground mb-12 text-lg">{t("contact", "subtitle")}</p>
 
-        <form
-          /* onSubmit={handleSubmit} */
-          className="space-y-6"
-          onSubmit={handleSubmit} // solo para feedback visual
-          action="https://formsubmit.co/rubencorba@gmail.com"
-          method="POST"
-        >
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-semibold mb-2">
-              Nombre
+              {t("contact", "name")}
             </label>
             <input
               type="text"
@@ -76,13 +65,13 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Tu nombre"
+              placeholder={t("contact", "placeholderName")}
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-semibold mb-2">
-              Email
+              {t("contact", "email")}
             </label>
             <input
               type="email"
@@ -92,13 +81,13 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="tu@email.com"
+              placeholder={t("contact", "placeholderEmail")}
             />
           </div>
 
           <div>
             <label htmlFor="message" className="block text-sm font-semibold mb-2">
-              Mensaje
+              {t("contact", "message")}
             </label>
             <textarea
               id="message"
@@ -108,7 +97,7 @@ export default function Contact() {
               required
               rows={5}
               className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-              placeholder="Tu mensaje..."
+              placeholder={t("contact", "placeholderMessage")}
             />
           </div>
 
@@ -120,19 +109,19 @@ export default function Contact() {
             {loading ? (
               <>
                 <Loader size={20} className="animate-spin" />
-                Enviando...
+                {t("contact", "sending")}
               </>
             ) : (
               <>
                 <Mail size={20} />
-                Enviar Mensaje
+                {t("contact", "sendMessage")}
               </>
             )}
           </button>
 
           {success && (
             <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-700 text-center">
-              ¡Mensaje enviado exitosamente! Te contactaré pronto.
+              {t("contact", "success")}
             </div>
           )}
         </form>

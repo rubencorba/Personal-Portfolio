@@ -1,16 +1,19 @@
 "use client"
 
 import { Github, Linkedin } from "lucide-react"
+import { useLanguage } from "@/context/LanguageContext"
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-foreground text-background py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
           {/* Left Side */}
           <div>
-            <h3 className="text-xl font-bold mb-2">Rubén Ernesto Corbalán</h3>
-            <p className="text-background/70">Full Stack Developer</p>
+            <h3 className="text-xl font-bold mb-2">{t("footer", "name")}</h3>
+            <p className="text-background/70">{t("footer", "role")}</p>
           </div>
 
           {/* Social Links */}
@@ -42,14 +45,14 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="px-6 py-2 border border-background rounded-lg font-semibold hover:bg-background/10 transition-colors"
           >
-            Ver CV
+            {t("footer", "viewCV")}
           </a>
         </div>
 
         {/* Divider */}
         <div className="border-t border-background/20 pt-8">
-          <p className="text-center text-background/70">
-            © 2025 Rubén Ernesto Corbalán. Todos los derechos reservados. | Diseñado y desarrollado con ❤️
+          <p className="text-center text-background/70 text-sm md:text-base">
+            © 2025 {t("footer", "name")}. {t("footer", "rights")} | {t("footer", "madeWith")}
           </p>
         </div>
       </div>
