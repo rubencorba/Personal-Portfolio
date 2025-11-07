@@ -52,7 +52,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-background/20 pt-8">
           <p className="text-center text-background/70 text-sm md:text-base">
-            © 2025 {t("footer", "name")}. {t("footer", "rights")} | {t("footer", "madeWith")}
+            © 2025 {t("footer", "name")} | {t("footer", "madeWith")}
           </p>
         </div>
       </div>
