@@ -8,7 +8,7 @@ export const translations = {
         },
         hero: {
             description:
-                "Desarrollador web Full Stack con experiencia profesional en el desarrollo de aplicaciones web modernas, capaz de comunicarme y trabajar en español, inglés y portugués.",
+                "Con más de un año de experiencia creando aplicaciones web modernas, capaz de comunicarme y trabajar en español, inglés y portugués.",
             contact: "Contáctame",
             cv: "Ver CV",
         },
@@ -97,7 +97,7 @@ export const translations = {
         },
         hero: {
             description:
-                "Full Stack web developer with professional experience in building modern web applications, able to communicate and work in Spanish, English and Portuguese.",
+                "With over a year of experience building modern web applications, able to communicate and work in Spanish, English, and Portuguese.",
             contact: "Contact me",
             cv: "View CV",
         },
@@ -168,7 +168,7 @@ export const translations = {
         },
         hero: {
             description:
-                "Desenvolvedor web Full Stack com experiência profissional no desenvolvimento de aplicações web modernas, capaz de se comunicar e trabalhar em espanhol, inglês e português.",
+                "Com mais de um ano de experiência criando aplicações web modernas, capaz de me comunicar e trabalhar em espanhol, inglês e português.",
             contact: "Contate-me",
             cv: "Ver currículo",
         },
