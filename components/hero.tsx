@@ -24,7 +24,7 @@ export default function Hero() {
               <img
                 src={PaPerfil3.src}
                 alt="Rubén Ernesto Corbalán"
-                className="w-full h-full rounded-full object-cover object-top"
+                className="w-full h-full rounded-full object-cover object-top animate-pulse-fade-in"
               />
             </div>
           </div>
@@ -36,10 +36,9 @@ export default function Hero() {
 
         <p className="text-2xl md:text-3xl font-light text-primary mb-6">Full Stack Developer</p>
 
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-{/*           Desarrollador web Full Stack con experiencia profesional en el desarrollo de aplicaciones web modernas, capaz de comunicarme y trabajar en español, inglés y portugués.
- */}{t("hero", "description")}
-         </p>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed text-balance">
+          {t("hero", "description")}
+        </p>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
           <button

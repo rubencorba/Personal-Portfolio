@@ -32,8 +32,8 @@ export const projectsData = [
   {
     id: 3,
     image: VistaProyGDI.src,
-    repositorioPrivado: true,
-    live: "https://gdi-alfa-production.up.railway.app/",
+    /* repositorioPrivado: true, */
+    live: "https://demo.gdilatam.com/",
     github: "https://github.com/GestionDocumentalInteligente/MVP-Frontend",
     tags: ["Typescript", "Next.js", "TailwindCSS"],
   },
