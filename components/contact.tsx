@@ -25,13 +25,18 @@ export default function Contact() {
     setLoading(true)
 
     try {
-      await fetch("https://formsubmit.co/ajax/rubencorba@gmail.com", {
+      await fetch("https://formsubmit.co/ajax/e44cdbaff4af7bbcc42084f9e3489f67", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _subject: "Nuevo mensaje desde mi portfolio",
+          _captcha: "false",
+          _template: "box",
+        }),
       })
 
       setSuccess(true)
